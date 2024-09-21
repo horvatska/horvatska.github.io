@@ -68,3 +68,5 @@ function playSoundOBI() {
   const audio = new Audio('zvuk/OBI.mp3');
   audio.play();
 }
+
+console.log("ako citas ovo gej si")
