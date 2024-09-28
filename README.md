@@ -6,16 +6,10 @@
 
 - Dodano: Zvukovi i vise javascripta nasuprot ostale dvije verzije (možda i uskoro php)
 
-# ZA DEV
-
-- ko oce da pomogne oko stranice nek mi se javi na discordu darwizzy_nunez69
-
-- NEMA micanja blokove koda, jedino ako imaju sukob međusobno, u tom slucaju napiši ispocetka kod
-
-- ne budi previse ambiciozan, malo po malo idi i nemoj totalno odjedanput promjenit izgled stranice (GUI)
-
-- posalji meni kod i screenaj kako izgleda prije nego sto uploadas
-
 # NOTE:
 
 - Nemam source kod horvatske 1.0 tako da ona fali trenutacno za sad
+
+- jos cu viditi za pravu stranicu, za sad je git
+
+# VERZIJA 3.0 2024-9-28

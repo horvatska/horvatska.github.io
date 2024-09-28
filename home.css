@@ -9,12 +9,14 @@ nav ul li {
     position: relative;
 }
 
+/*main bar*/
 nav ul li a {
     display: block;
     padding: 10px;
-    color: #000000;
+    color: #ffffff;
     text-decoration: none;
-    background-color: #727272;
+    background: linear-gradient(to bottom, #429dff, #0057B2);
+    border-radius: 3px;
 }
 
 nav ul li a:hover {
@@ -34,8 +36,10 @@ nav ul li ul li {
     display: block;
 }
 
+/*dropdown horvatska*/
+
 nav ul li ul li a {
-    color: black;
+    color: #ffffff;
     padding: 10px;
 }
 
@@ -87,14 +91,14 @@ nav ul li:hover ul {
   button {
 
     font-family: Courier New, monospace; 
-    color: white;
+    color: #000000;
     text-align: center;
     border: none;
     cursor: pointer;
     padding: 5px 10px;
   
     
-    background: linear-gradient(to bottom, #007AFF, #0057B2);
+    background: linear-gradient(to bottom, #dedede, #999999);
     border-radius: 3px;
   
     
