@@ -21,7 +21,7 @@ function showErrorMessage() {
     });
 
     helpButton.addEventListener('click', () => {
-      window.location.href = 'https://www.youtube.com/watch?v=-gEAUwiaj6I';
+      window.location.href = 'https://www.youtube.com/watch?v=GMgsFZ4rkEI';
     });
   } else {
     errorMessageBox.style.display = 'block';
@@ -66,6 +66,56 @@ explosionSound.play();
 
 function playSoundOBI() {
   const audio = new Audio('zvuk/OBI.mp3');
+  audio.play();
+}
+
+function playSoundERMES() {
+  const audio = new Audio('zvuk/ERMES.mp3');
+  audio.play();
+}
+
+let inactivityTimer;
+const inactivityTimeout = 10 * 60 * 1000;
+const sound = new Audio('zvuk/inactivity.mp3'); 
+function resetInactivityTimer() {
+ 
+  clearTimeout(inactivityTimer);
+
+
+  sound.pause();
+  sound.currentTime = 0;  
+
+ 
+  inactivityTimer = setTimeout(() => {
+    sound.play(); 
+  }, inactivityTimeout);
+}
+
+
+const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
+
+activityEvents.forEach(event => {
+  window.addEventListener(event, resetInactivityTimer);
+});
+
+
+resetInactivityTimer();
+
+function showImage(element) {
+  const lightbox = document.getElementById('lightbox');
+  const fullImage = document.getElementById('full-image');
+
+  fullImage.src = element.src; 
+  lightbox.style.display = 'flex'; 
+}
+
+function hideImage() {
+  const lightbox = document.getElementById('lightbox');
+  lightbox.style.display = 'none'; 
+}
+
+function playSoundSMRAD() {
+  const audio = new Audio('zvuk/prnija.mp3');
   audio.play();
 }
 
