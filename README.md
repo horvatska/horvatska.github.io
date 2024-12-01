@@ -12,4 +12,4 @@
 
 - jos cu viditi za pravu stranicu, za sad je git
 
-# VERZIJA 3.0 2024-9-28
+# VERZIJA 3.0 2024-11-26
