@@ -6,7 +6,7 @@ function showErrorMessage() {
     errorMessageBox.classList.add('error-message-box');
     errorMessageBox.innerHTML = `
       <h2>GREŠKA.</h2>
-      <p>horvatska v1 jos nece bit dokle god ne pronađem source kod originalne stranice</p>
+      <p>Ova opcija je trajno nedostupna jer ste je iskoristili toliko puno da je nestalo TNT-a za eksploziju stranice.</p>
       <button class="fine-button">Dombro.</button>
       <button class="help-button">Puši kurac</button>
     `;
@@ -74,39 +74,9 @@ function playSoundERMES() {
   audio.play();
 }
 
-let inactivityTimer;
-const inactivityTimeout = 10 * 60 * 1000;
-const sound = new Audio('zvuk/inactivity.mp3'); 
-function resetInactivityTimer() {
- 
-  clearTimeout(inactivityTimer);
-
-
-  sound.pause();
-  sound.currentTime = 0;  
-
- 
-  inactivityTimer = setTimeout(() => {
-    sound.play(); 
-  }, inactivityTimeout);
-}
-
-
-const activityEvents = ['mousemove', 'keydown', 'click', 'scroll', 'touchstart'];
-
-activityEvents.forEach(event => {
-  window.addEventListener(event, resetInactivityTimer);
-});
-
-
-resetInactivityTimer();
-
-function showImage(element) {
-  const lightbox = document.getElementById('lightbox');
-  const fullImage = document.getElementById('full-image');
-
-  fullImage.src = element.src; 
-  lightbox.style.display = 'flex'; 
+function playSoundTheFinalHour() {
+  const audio = new Audio('zvuk/inactivity.mp3');
+  audio.play();
 }
 
 function hideImage() {
