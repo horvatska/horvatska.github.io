@@ -1,55 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>horvacka v3</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Comic+Neue:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="home.css">
-    <link rel="stylesheet" href="text.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HORVATSKA OS</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <nav>
-        <ul>
-            <li class="dropdown">
-                <a href="#">horvacka</a>
-            </li>
-            <li><a href="novosti.html">novosti</a></li>
-            <li><a href="https://github.com/bedekovcina/horvatska-v3">githab sors kod</a></li>
-            <li><a onclick="showErrorMessage()">eksplodiraj stranicu</a></li>
-            </ul>
-    </nav>
-    
-<div class="intro">
-<div class="naslov"><h1>HORVACKA VERZIJA 3.0</h1></div>
+  <!-- Desktop -->
+  <div id="desktop">
+    <!-- SRBIJA PPF -->
+  <div id="recycle-bin" class="desktop-icon" title="Recycle Bin">
+  <img src="assets/images/recycle-bin.png" alt="Recycle Bin" />
+  <span>Recycle Bin</span>
 </div>
-<div class="paragraf"><p>3 verzija mocne horvatske stranice</p>
-    <p>kredit: VITALY IZ SOMALIZEMLJE</p>
-    <div class="image-container">
-        <img src="slike/NDH.png" alt="Thumbnail" class="thumbnail" onclick="showImage(this)" style="width: 600px; height: 400px;">
+    <!-- READ ME -->
+<div id="readme-shortcut" class="desktop-icon" title="README.md">
+    <img src="assets/images/text-file.png" alt="README.md" />
+    <span>README.md</span>
+  </div>
+    <!-- više programa -->
+  </div>
+
+  <!-- Taskbar -->
+<div id="taskbar">
+  <button id="start-button" title="Start">
+    <img src="assets/images/linux-penguin-logo-vector.png" alt="Start Logo" id="start-logo" />
+  </button>
+  <button id="ie-button" class="taskbar-icon" title="Internet Explorer">
+  <img src="assets/images/ie.png" alt="Internet Explorer" id="ie-logo" />
+</button>
+  <div id="taskbar-apps"></div>
+  <div id="taskbar-tray">
+    <img src="assets/images/network.png" alt="Network" class="tray-icon" />
+    <div id="volume-container">
+      <img src="assets/images/volume.png" alt="Volume" class="tray-icon" id="volume-icon" />
+      <input type="range" id="volume-slider" min="0" max="100" value="50" />
     </div>
-    <div id="lightbox" class="lightbox">
-        <button class="close-btn" onclick="hideImage()">×</button>
-        <img id="full-image" src="" alt="Full Image">
-    </div>
-    <h2>SUPPORTERI HORVATSKE.TK:</h2>
-    <p>- Pičkovački narod</p>
-    <p>- šakajada</p>
-    <p>- mali jura</p>
-    <p>- pacifiki69</p>
-    <p>I MOJA MATER</p>
-    <div class="image-container">
-        <img src="slike/rizzler.png" alt="Thumbnail" class="thumbnail" onclick="showImage(this),playSound()" style="width: 250px; height: 250px;">
-    </div>
-    <div id="lightbox" class="lightbox">
-        <button class="close-btn" onclick="hideImage()">×</button>
-        <img id="full-image" src="" alt="Full Image">
-    </div>
+    <div id="clock"></div>
+  </div>
+</div>
+
+<!-- Start Menu -->
+<div id="start-menu" class="hidden">
+  <div class="start-menu-header">
+    <img src="assets/images/linux-penguin-logo-vector.png" alt="Logo" />
+    <span>HORVATSKA V4</span>
+  </div>
+  <ul class="start-menu-list">
+    <li id="start-about">About Horvatska</li>
+    <li id="start-novosti">Vijesti Horvatske</li>
+    <!-- više ak bude -->
+  </ul>
 </div>
 
 
-<script src="main.js"></script>
+  <!-- Tab ili ti page -->
+  <template id="window-template">
+    <div class="window">
+      <div class="title-bar">
+        <span class="title">O sustavu:</span>
+        <div class="window-controls">
+          <button class="minimize">_</button>
+          <button class="maximize">[ ]</button>
+          <button class="close">X</button>
+        </div>
+      </div>
+      <div class="window-content">
+        <iframe src="about.html" frameborder="0"></iframe>
+      </div>
+    </div>
+  </template>
+
+  <script src="script.js"></script>
 </body>
 </html>

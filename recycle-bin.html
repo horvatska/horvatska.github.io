@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recycle Bin</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 16px;
+            background: #f1f1f1;
+            font-family: Segoe UI, Arial, sans-serif;
+        }
+        .recycle-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+.recycle-item {
+    background: #fff;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px 16px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    display: flex;
+    align-items: center; 
+    gap: 12px;
+}
+
+.recycle-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: block;
+}
+
+.item-name {
+    flex: 1;
+    margin-left: 0;
+    font-size: 15px;
+    font-family: inherit;
+    font-weight: 400;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.item-date {
+    color: #888;
+    font-size: 12px;
+    margin-left: 8px;
+    white-space: nowrap;
+}
+
+.item-type {
+    min-width: 48px;
+    color: #222;
+    font-size: 15px;
+    margin-right: 8px;
+    text-align: left;
+    font-family: inherit;
+}
+    </style>
+</head>
+<body>
+    <div style="font-weight: bold; font-size: 20px; margin-bottom: 18px;">
+        Stvari u košu za smeće:
+    </div>
+   <ul class="recycle-list">
+    <li class="recycle-item">
+        <img class="recycle-icon" src="assets/images/file-icon.png" alt="File" />
+        <span class="item-type"></span>
+        <span class="item-name">horvatska povijest (ndms ju radit)</span>
+        <span class="item-date">Deleted: 2025-05-30</span>
+    </li>
+    <li class="recycle-item">
+        <img class="recycle-icon" src="assets/images/file-icon.png" alt="File" />
+        <span class="item-type"></span>
+        <span class="item-name">Konstitucijski papir prava žena u PDFu.pdf</span>
+        <span class="item-date">Deleted: 2025-05-28</span>
+    </li>
+    <li class="recycle-item">
+        <img class="recycle-icon" src="assets/images/folder-icon.png" alt="Folder" />
+        <span class="item-type"></span>
+        <span class="item-name">Kolekcija knjiga Karla Marxa</span>
+        <span class="item-date">Deleted: 2025-05-20</span>
+    </li>
+    <li class="recycle-item">
+        <img class="recycle-icon" src="assets/images/file-icon.png" alt="File" />
+        <span class="item-type"></span>
+        <span class="item-name">Srbija.png</span>
+        <span class="item-date">Deleted: 2025-05-15</span>
+    </li>
+</ul>
+<div style="font-weight: bold; font-size: 20px; margin-bottom: 18px; text-align: center;">
+    PS: Ako ste slučajno obrisali nešto, nema vraćanja datoteka jer u ovom operativnom sustavu nema privatnosti i šaljemo vam sve podatke vladi Sjeverne Koreje :D
+</div>
+</body>
+</html>

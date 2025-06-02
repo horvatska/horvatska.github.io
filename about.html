@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>About Windows</title>
+  <link href="https://fonts.googleapis.com/css2?family=Segoe+UI&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .winver-box {
+      background: white;
+      border: 1px solid #aaa;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+      width: 480px;
+      padding: 20px 30px;
+      box-sizing: border-box;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 15px;
+      width: 100px;
+    }
+
+    .title {
+      color: #0078D7;
+      font-size: 28px;
+      font-weight: bold;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+
+    hr {
+      margin: 1rem 0;
+      border: none;
+      border-top: 1px solid #ccc;
+    }
+
+    p {
+      font-size: 14px;
+      color: #333;
+      line-height: 1.5;
+    }
+
+    .license {
+      margin-top: 1rem;
+    }
+
+    .link {
+      color: #0078D7;
+      text-decoration: none;
+    }
+
+    .ok-btn {
+      margin-top: 20px;
+      float: right;
+      padding: 5px 18px;
+      border: 1px solid #888;
+      background: #eaeaea;
+      cursor: pointer;
+      font-family: inherit;
+    }
+
+    .ok-btn:focus {
+      outline: 1px dotted #000;
+    }
+  </style>
+</head>
+<body>
+  <div class="winver-box">
+    <img src="https://horvatska.github.io/favicon.ico" alt="Windows Logo" class="logo">
+    <div class="title">HORVATSKA V4</div>
+    <hr />
+    <p><strong>Horvatska Operativni Sustav</strong><br>
+    Version v4.0 (OS Build 1945.1488)<br>
+    © Bubijan Corporation. All rights reserved.</p>
+
+    <p>Ovaj operativni sustav je zaštićena marka Bubijana d.o.o. pod Pičkovačkom vladom Sekcija 34 Poglavlje 34.</p>
+
+    <p class="license">
+      Ovaj produkt je licensiran pod: <a href="#" class="link">Bubijan D.O.O. Software terms</a> na:<br>
+      <strong>horvatska-pc-1488</strong><br>
+      Org name
+    </p>
+
+    <button class="ok-btn">OK</button>
+  </div>
+  <script>
+  document.querySelector('.ok-btn').addEventListener('click', () => {
+    window.parent.postMessage({ type: "close-about-window" }, "*");
+  });
+</script>
+
+</body>
+</html>
