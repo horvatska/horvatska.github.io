@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UEFI/BIOS Boot Selection</title>
+    <style>
+        body {
+            background-color: #000000;
+            color: #c0c0c0;
+            font-family: 'Courier New', Courier, monospace;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            overflow: hidden;
+        }
+
+        .bios-container {
+            border: 2px solid #ffffff;
+            padding: 20px 40px;
+            width: 80%;
+            max-width: 640px;
+            text-align: center;
+            box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+        }
+
+        header h1 {
+            color: #ffff00;
+            margin: 0 0 10px 0;
+            font-size: 1.5em;
+        }
+
+        main {
+            text-align: left;
+            margin: 30px 0;
+        }
+
+        main ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        main li {
+            padding: 8px;
+            margin: 5px 0;
+            cursor: pointer;
+        }
+
+        main li.selected {
+            background-color: #c0c0c0;
+            color: #000080;
+        }
+
+        footer {
+            border-top: 1px solid #ffffff;
+            padding-top: 15px;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="bios-container">
+        <header>
+            <h1>UEFI/BIOS SELECTION UTILITY</h1>
+            <p>Copyright (C) 1993, Bubijan d.o.o.</p>
+        </header>
+        <main>
+            <p>Please select the operating system to boot:</p>
+            <p>Molim vas izaberite vaš operativni sistem:</p>
+            <ul id="boot-menu">
+                <li data-url="https://horvatska.github.io/Horvatska10">Horvatska 10</li>
+                <li data-url="https://horvatska.github.io/Horvatska11">Horvatska 11</li>
+            </ul>
+        </main>
+        <footer>
+            <p>↑↓: Select Item | Enter: Boot</p>
+        </footer>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuItems = document.querySelectorAll('#boot-menu li');
+            let selectedIndex = 0;
+
+            function updateSelection() {
+                menuItems.forEach((item, index) => {
+                    if (index === selectedIndex) {
+                        item.classList.add('selected');
+                    } else {
+                        item.classList.remove('selected');
+                    }
+                });
+            }
+
+            function navigateToSelected() {
+                const selectedItem = menuItems[selectedIndex];
+                if (selectedItem) {
+                    const url = selectedItem.getAttribute('data-url');
+                    if (url) {
+                        window.location.href = url;
+                    }
+                }
+            }
+
+            document.addEventListener('keydown', (event) => {
+                switch (event.key) {
+                    case 'ArrowUp':
+                        selectedIndex = (selectedIndex > 0) ? selectedIndex - 1 : menuItems.length - 1;
+                        updateSelection();
+                        break;
+                    case 'ArrowDown':
+                        selectedIndex = (selectedIndex < menuItems.length - 1) ? selectedIndex + 1 : 0;
+                        updateSelection();
+                        break;
+                    case 'Enter':
+                        navigateToSelected();
+                        break;
+                }
+            });
+
+            // Initialize the first item as selected
+            updateSelection();
+        });
+    </script>
+
+</body>
+</html>
